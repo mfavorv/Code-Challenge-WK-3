@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
             filmTitles.querySelector("li").remove();
 
  
- //For each value inside the data a list element is created and the value of the is stored in it
+ //For each value inside the data a list element is created and the nam of the film is stored in it
             data.forEach(film => {
                 let listItem = document.createElement("li");
                 listItem.textContent = film.title;
@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             let remainingTickets = document.getElementById("ticket-num");
                             remainingTickets.textContent = ticketsAvailable;
 
-//If the movie tickets are sold out, the button is disabled and its text content is changed, it is also added a class name
+//If the movie tickets are sold out, the button is disabled and its text content is changed, it is also added a class 
                             if (ticketsAvailable <= 0) {
                                 buyTickets.textContent = "Sold Out";
                                 buyTickets.disabled = true;
@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 .then(res => res.json())
                                 .then(updatedData => {
 
-//The data of the one film is all updated by using POST method
+//The data of that one film is all updated by using POST method
                                     console.log(updatedData);
                                     let ticketsLeft = ticketsAvailable - updatedData.tickets_sold;
                                     fetch('http://localhost:3000/tickets', {
